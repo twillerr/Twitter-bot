@@ -19,12 +19,14 @@ while i < n:
     print("Getting post {x} of {y}...".format(x=i+1,y=n)) 
     i+=1
 
-print("Done")
+
 niceposts = postdict
 
 with open("fb_posts.json", "w") as f:
     #write to txt file "fb_posts_lists"
     json.dump(niceposts,f)
+
+print("Written to file")
 
 
 
