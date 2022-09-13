@@ -1,7 +1,6 @@
 import tweepy
 import config
 import time
-from timeit import default_timer as timer
 from oxpret_scraper import get_recent_post, write_to_file,read_from_file
 
 consumer_key = config.consumer_key
@@ -12,13 +11,10 @@ bearer_token = config.bearer_token
 
 client = tweepy.Client(bearer_token,consumer_key, consumer_secret,access_token, access_token_secret)
 
-
-group_url = "https://www.facebook.com/groups/522129019655282"
 intro_msg = "!! OXPRET UPDATE !!:\n"
 
 def publish_post(msg):
-    client.create_tweet(text=intro_msg+msg, )
-    
+    client.create_tweet(text=intro_msg+msg, )   
 
 def check_and_update():
     web_post= get_recent_post()
