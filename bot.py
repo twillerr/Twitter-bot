@@ -14,7 +14,7 @@ client = tweepy.Client(bearer_token,consumer_key, consumer_secret,access_token, 
 intro_msg = "!! OXPRET UPDATE !!:\n"
 
 def publish_post(msg):
-    client.create_tweet(text=intro_msg+msg, )   
+    client.create_tweet(text=intro_msg+f"\"{msg}\"")   
 
 def check_and_update():
     web_post= get_recent_post()
@@ -30,6 +30,3 @@ while True:
     check_and_update()
     time.sleep(30)
     print("checking again...")
-
-
-
