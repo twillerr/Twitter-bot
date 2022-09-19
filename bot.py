@@ -10,13 +10,20 @@ access_token_secret = config.access_token_secret
 bearer_token = config.bearer_token
 
 client = tweepy.Client(bearer_token,consumer_key, consumer_secret,access_token, access_token_secret)
+#authentication with Twitter API
 
 intro_msg = "!! OXPRET UPDATE !!:\n"
 
 def publish_post(msg):
+<<<<<<< HEAD
     client.create_tweet(text=intro_msg+f"\"{msg}\"")   
+=======
+    #send post to twitter page, with prefix
+    client.create_tweet(text=intro_msg+msg, )   
+>>>>>>> 99bd68b9f00b1bb143cdaebbdc9b1d7138a5c244
 
 def check_and_update():
+    #Get latest post from FB page and compare with post on file
     web_post= get_recent_post()
     local_post= read_from_file()
     if web_post != local_post:
@@ -27,6 +34,7 @@ def check_and_update():
         print("No new posts.")
 
 while True:
+    #bot checks for updates every 30 seconds
     check_and_update()
     time.sleep(30)
     print("checking again...")
