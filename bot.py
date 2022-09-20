@@ -15,12 +15,8 @@ client = tweepy.Client(bearer_token,consumer_key, consumer_secret,access_token, 
 intro_msg = "!! OXPRET UPDATE !!:\n"
 
 def publish_post(msg):
-<<<<<<< HEAD
-    client.create_tweet(text=intro_msg+f"\"{msg}\"")   
-=======
     #send post to twitter page, with prefix
-    client.create_tweet(text=intro_msg+msg, )   
->>>>>>> 99bd68b9f00b1bb143cdaebbdc9b1d7138a5c244
+    client.create_tweet(text=intro_msg+f"\"{msg}\"")    
 
 def check_and_update():
     #Get latest post from FB page and compare with post on file
